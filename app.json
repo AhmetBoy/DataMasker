@@ -1,26 +1,26 @@
 {
   "expo": {
-    "name": "data-masker-app",
+    "name": "KVKK Data Masker",
     "slug": "data-masker-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f8f5f7"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.datamasker.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#f8f5f7"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.datamasker.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
