@@ -1,6 +1,8 @@
 import * as FileSystem from 'expo-file-system/legacy';
 import * as XLSX from 'xlsx';
 import PizZip from 'pizzip';
+// PDF-lib has compatibility issues with React Native
+// import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
 // Helper function to escape XML special characters
 const escapeXML = (text) => {
@@ -58,26 +60,9 @@ export const parseXLSXFile = async (uri) => {
 
 // PDF support
 export const parsePDFFile = async (uri) => {
-  try {
-    // TODO: PDF okuma kütüphanesini buraya entegre edeceğiz
-    // Örnek: react-native-pdf, pdfjs-dist, react-native-pdf-lib vb.
-
-    // Read file as base64
-    const base64 = await FileSystem.readAsStringAsync(uri, {
-      encoding: FileSystem.EncodingType.Base64,
-    });
-
-    // PDF parsing will be implemented here based on chosen library
-    // For now, return placeholder
-    console.log('PDF file detected, parsing...');
-
-    // This section will be replaced with actual PDF parsing code
-    throw new Error('PDF okuma modülü entegre ediliyor. Lütfen Word veya Excel kullanın.');
-
-  } catch (error) {
-    console.error('Error reading PDF file:', error);
-    throw new Error('PDF dosyası okunamadı: ' + error.message);
-  }
+  // PDF text extraction is complex in React Native environment
+  // Recommending alternative approaches
+  throw new Error('PDF okuma şu anda desteklenmiyor. Lütfen PDF\'yi Word (.docx) veya Excel formatına dönüştürerek kullanın. Online araçlar: https://www.ilovepdf.com/pdf_to_word');
 };
 
 // DOCX support
@@ -187,21 +172,9 @@ export const writeDOCXFile = async (originalUri, maskedText, outputFileName) => 
 
 // Write PDF file with masked content
 export const writePDFFile = async (originalUri, maskedText, outputFileName) => {
-  try {
-    // TODO: PDF yazma kütüphanesini buraya entegre edeceğiz
-    // Örnek: react-native-pdf-lib, jspdf vb.
-
-    // PDF generation will be implemented here based on chosen library
-    console.log('Generating masked PDF file...');
-
-    // This section will be replaced with actual PDF generation code
-    // For now, throw error
-    throw new Error('PDF yazma modülü entegre ediliyor. Lütfen Word veya Excel kullanın.');
-
-  } catch (error) {
-    console.error('Error writing PDF file:', error);
-    throw new Error('PDF dosyası yazılamadı: ' + error.message);
-  }
+  // PDF generation is complex in React Native environment
+  // Recommending to export as Text and convert to PDF externally
+  throw new Error('PDF yazma şu anda desteklenmiyor. Maskelenmiş veriyi Text dosyası olarak indirebilir ve daha sonra PDF\'e dönüştürebilirsiniz.');
 };
 
 // Write XLSX file with masked content

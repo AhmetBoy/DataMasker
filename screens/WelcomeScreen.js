@@ -25,8 +25,7 @@ export default function WelcomeScreen({ navigation }) {
           'application/vnd.ms-excel',
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-          'application/msword',
-          'application/pdf'
+          'application/msword'
         ],
         copyToCacheDirectory: true,
       });
@@ -99,7 +98,7 @@ export default function WelcomeScreen({ navigation }) {
                 Dosyanızı Yüklemek İçin Dokunun
               </Text>
               <Text style={styles.uploadSubtitle}>
-                Excel • Word • PDF • Text
+                Excel • Word • Text
               </Text>
 
               {selectedFile && (
